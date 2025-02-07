@@ -37,10 +37,13 @@
       <div id="date">  02.14.2025   </div>
       <!-- <img src="static/images/pinkgradient.png" alt="heart" id="gradient"> -->
       <!-- <div id="greeting"> My Dearest, Essence </div> -->
-      <div id="note"> As I sit down to pen these words, I'm filled with a warmth that only your presence in my life brings. With each passing moment, my love for you grows deeper, more profound, and utterly unconditional. With you, I've discovered a love that transcends the ordinary, a connection that defies explanation. You are my confidante and my greatest source of joy. In your embrace, I've found a home, and in your love, I've found my purpose. Forever and always, I am yours.</div>
-      <div id="signature"> With all my love, </div>
+      <!-- <div id="note">  Dum haec verba scribere incipio, calore repleor qui sola tua praesentia in vita mea affertur. Omni momento transeunte, amor meus erga te profundior fit, altior et omnino sine conditionibus. Tecum, amorem inveni qui ordinem transcendit, nexum qui rationem superat. Tu mihi consiliaria et maxima laetitiae fons es. In amplexu tuo domum repperi, et in amore tuo propositum vitae meae inveni. In perpetuum et semper, tuus sum. </div> -->
+      
+      <div id="typewrite"></div>
+      <div id="signature"></div>
+
       <img id="singleheart" src="static/styles/redheart.svg" alt="imgh">
-      <div id="suitor"> Johnathan</div>
+      <div id="suitor"></div>
       <!-- <img src="static/images/letter.png" alt="heart" id="pics"> -->
 
   </div>
@@ -59,9 +62,51 @@
   });
 </script>
 
+<script>
+  const text1 = 'Dum haec verba scribere incipio, calore repleor qui sola tua praesentia in vita mea affertur. Omni momento transeunte, amor meus erga te profundior fit, altior et omnino sine conditionibus. Tecum, amorem inveni qui ordinem transcendit, nexum qui rationem superat. Tu mihi consiliaria et maxima laetitiae fons es. In amplexu tuo domum repperi, et in amore tuo propositum vitae meae inveni. In perpetuum et semper, tuus sum.';
+  const text2 = "With all my love,";
+  const text3 = "James"
+
+
+let i = 0, j = 0, k=0; 
+const speed = 20;
+
+function typeWriter1() {
+  if (i < text1.length) {
+    document.getElementById("typewrite").textContent += text1.charAt(i);
+    i++;
+    setTimeout(typeWriter1, speed);
+  } else {
+    setTimeout(typeWriter2, 1000); // Delay before typing the second text
+  }
+}
+
+function typeWriter2() {
+  if (j < text2.length) {
+    document.getElementById("signature").textContent += text2.charAt(j);
+    j++;
+    setTimeout(typeWriter2, speed);
+  } else {
+    setTimeout(typeWriter3, 1000); // Delay before typing the third text
+  }
+}
+
+function typeWriter3() {
+  if (k < text3.length) {
+    document.getElementById("suitor").textContent += text3.charAt(k);
+    k++;
+    setTimeout(typeWriter3, speed);
+  }
+}
+
+window.onload = typeWriter1;
+</script>
+
 
 <script src="static/animations.js" defer></script>
 <script src="static/hearts.js" defer></script>
+<!-- <script src="static/type.js" defer></script> -->
+
 </div>
 </body>
 </html>

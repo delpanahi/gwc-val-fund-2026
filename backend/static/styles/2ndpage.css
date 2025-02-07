@@ -202,7 +202,24 @@ body {
   text-decoration: underline;
 }
 
-#note {
+/* #note {
+  padding: 5px 10px;
+  position: absolute;
+  left: 100px;
+  top: 400px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 650px;
+  height: 30px;
+  text-decoration: wavy;
+
+  line-height: 2.0; 
+  white-space: pre-wrap; 
+} */
+
+#typewrite {
   padding: 5px 10px;
   position: absolute;
   left: 100px;
@@ -215,12 +232,21 @@ body {
   width: 650px;
   height: 30px;
   text-decoration: wavy;
+  z-index: 1;
   /* text-decoration: underline; */
 
   /* Line Spacing */
   line-height: 2.0; /* Adjust this value as needed */
   white-space: pre-wrap; /* Preserve line breaks from text */
+  animation: blink 0.75s step-end infinite;
 }
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 
 #signature {
   padding: 5px 10px;
@@ -237,6 +263,8 @@ body {
   z-index: 1;
 
 }
+
+
 
 #suitor {
   padding: 5px 10px;
