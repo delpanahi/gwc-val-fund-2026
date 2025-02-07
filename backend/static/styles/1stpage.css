@@ -24,8 +24,9 @@ body {
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    font-family: 'Lazy Dog', sans-serif;
-    background-color: #feebd7;
+    font-family: 'Perandory', sans-serif;
+    /* background-color: #fee2e6; */
+    background-color: #FFDEE3;  
     overflow-x: hidden;
 
 }
@@ -42,7 +43,7 @@ svg {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Lazy Dog', sans-serif;
+    font-family: 'Perandory', sans-serif;
 
   }
 
@@ -80,7 +81,7 @@ svg {
         height: 0;
         border-style: solid;
         border-width: 0 0 200px 400px;
-        border-color: transparent transparent #e95f55 transparent;
+        border-color: transparent transparent #fda7ae transparent;
         z-index: 2;
     } 
 }
@@ -98,7 +99,9 @@ svg {
     -moz-transition: transform .4s .4s, z-index .2s .4s;
     transform-origin: 50% 0%;
     transition: transform .4s .4s, z-index .2s .4s;
-    border-color: #cf4a43 transparent transparent transparent;
+    /* border-color: #fdbedd transparent transparent transparent; */
+    border-color: #fdbedd transparent transparent transparent;
+
     z-index: 2;
 }
 
@@ -107,8 +110,9 @@ svg {
     bottom: 0;
     width: 400px; 
     height: 200px;
-    background: #cf4a43;
+    background: #fff4d1;
     z-index: 0; 
+
 }
 
 .left-fold {
@@ -118,8 +122,9 @@ svg {
     height: 0;
     border-style: solid;
     border-width: 100px 0 100px 200px;
-    border-color: transparent transparent transparent #e15349;
+    border-color: transparent transparent transparent #fda7ae;
     z-index: 2;
+
 }  
 
 .letter {
@@ -129,8 +134,9 @@ svg {
     width: 360px;
     height: 120px;
 
+    border-image: radial-gradient(#ff0b27  69%, #00000000 70%) 84.5%/50%;
     aspect-ratio: 2;
-    border-image: radial-gradient(white 69%, #0000 70%) 84.5%/50%;
+    /* border-image: radial-gradient(#FF8896  69%, #00000000 70%) 84.5%/50%; */
     clip-path: polygon(-41% 0, 50% 91%, 141% 0);
 
 
@@ -153,13 +159,18 @@ svg {
         );
     }
     .letter-title {
-        margin-top: 50px;
+        position: relative;
+        margin-top: 30px;
         margin-left: 30px;
-        height: 30px;
+        height: 10px;
         width: 80%;
-        font-size: 30px;
+        font-size: 35px;
         text-align: center;
+        color: rgb(255, 255, 255);
+        text-shadow: 2px 2px 5px rgb(255, 255, 255); /* Shadow effect */
+        letter-spacing: 3px;
         /* background: #cb5a5e;  */
+        z-index: 1; 
     }
     .letter-context {
         margin-top: 10px;
@@ -169,45 +180,55 @@ svg {
         /* background: #cb5a5e; */
     }
     .letter-stamp {
-        margin-top: 30px;
+        margin-top: 0px;
         margin-left: 120px;
         border-radius: 100%;
         height: 30px;
         width: 30px;
         /* background: #cb5a5e; */
         opacity: 0.3;
+        z-index: 1; 
     }
     .letter-open{
+        position: absolute;
         margin-left: 125px; 
-        margin-top: 60px;
-        width: 120px;
+        margin-top: 100px;
+        width: 100px;
         height: 30px;
-        background-color: rgb(252, 166, 182);
+        background-color: rgb(164, 164, 164);
         border-radius: 5px;
         /* font-family: "Ephesis"; */
-        font-family: 'Lazy Dog', sans-serif;
+        font-family: "Ephesis", sans-serif;
         font-weight: bolder;
-        font-size: 20px;
-        color: black;
-        border-color: black;
-        
-    }
-  }
+        font-size: 30px;
+        letter-spacing: 2px;
+        color: rgb(0, 0, 0);
+        border-color: rgb(0, 0, 0);
+        z-index: 10; /* Higher value to bring it above other elements */
 
-.shadow {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease; /* Smooth transition */
+    }
+    
+    .letter-open:hover {
+        background-color: rgb(233, 151, 176); /* Slight color change on hover */
+    }
+}
+
+  .shadow {
     position: absolute;
-    top: 200px;
+    top: 350px;
     left: 50%;
-    width: 500px;
-    height: 40px;
-    transition: .4s;
+    width: 300px;
+    height: 20px;
     transform: translateX(-50%);
-    -webkit-transition: .4s;
-    -webkit-transform: translateX(50%);
-    -moz-transition: .4s;
-    -moz-transform: translateX();
-    border-radius: 100%;
-    background: radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.0) rgba(0,0,0,0.0));
+    border-radius: 50%; /* Circular shape */
+    background: radial-gradient(circle, rgba(251, 210, 215, 0.2) 70%, rgba(188, 183, 183, 0.2) 20%);
+    transition: .4s ease-in-out;
+    z-index: 1; /* Send shadow beneath the letter */
 }
 
     .letter-image:hover {
@@ -215,6 +236,12 @@ svg {
             transform: translateY(50px);
             -webkit-transform: translateY(50px);
             -moz-transform: translateY(50px);
+        }
+
+        .letter-image:hover .shadow {
+            width: 301px;
+            height: 25px;
+            opacity: 0.5;
         }
     .animated-mail .top-fold {
         transition: transform .4s, z-index, z-index .2s;
@@ -234,16 +261,75 @@ svg {
     }
     }
 
- /* The block swipe effect */
- .block-swipe {
+/* .block-swipe {
     position: absolute;
     top: 0;
     right: -100%;
     width: 100vw;
     height: 100vh;
     background-color: white;
-    background-image: url('transition.png'); /* Use a hearts pattern image */
+    background-image: url('tw.svg'); 
     background-size: cover;
-    transition: transform 1s ease;
+    transition: transform 1s ease, opacity 1s ease; 
+    opacity: 0.3; 
     z-index: 2;
   }
+  
+  .block-swipe.visible {
+    right: 0;
+    opacity: 1; 
+  } */
+
+  /* The block swipe effect */
+.block-swipe {
+    position: absolute;
+    top: 0;
+    right: -100%; /* Starts off-screen */
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    background-image: url('tw.svg'); /* Use a hearts pattern image */
+    background-size: cover;
+    opacity: 0; /* Start with the image hidden */
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform 1s ease, opacity 1s ease; /* Transition both transform and opacity */
+    z-index: 2;
+  }
+  
+  /* When triggered to show the block swipe */
+  .block-swipe.visible {
+    right: 0; /* Bring it back on screen */
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Slide in */
+  }
+  
+
+  
+  #falling-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1; /* Place the hearts behind other elements */
+  }
+  
+  .heart {
+    position: absolute;
+    top: -50px;
+    font-size: 24px;
+    width: 30px; /* Set the size of the heart */
+    height: 30px;
+    background-image: url('rh.png'); /* Replace with the correct path to your PNG */
+    background-size: cover; /* Ensure the image scales correctly */
+    animation: fall 5s linear infinite;
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateY(100vh);
+      opacity: 1;
+    }
+  }
+  

@@ -15,10 +15,13 @@
     @import url('https://fonts.cdnfonts.com/css/lazy-dog');
   </style>
 
-
+  <style>
+  @import url('https://fonts.cdnfonts.com/css/perandory');
+  </style>
 </head>
 
 <body>
+  <div id="falling-hearts"></div>
   <div>
   <div class="text-container"> 
   <svg width="800" height="200">
@@ -26,15 +29,12 @@
       <path id="curve" d="M50,150 A300,300 0 0,1 750,150" />
     </defs>
     <text width="800">
-      <textPath href="#curve" startOffset="50%" text-anchor="middle" fill="brown" font-size="100px">
+      <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" fill="#FF6F77" font-size="100px">
         Happy Valentine's Day
       </textPath>
     </text>
   </svg>
 </div> 
-
-
-
 
 
   <div id="letter-image" class="letter-image">
@@ -44,7 +44,7 @@
         <div class="letter-border"></div>
         <div class="letter-title">Essence, you have recieved a love letter..</div>
         <!-- <a href="lovenote"> -->
-        <button id="letter-open" class="letter-open">Open it!!</button>
+        <button id="letter-open" class="letter-open">open it</button>
         <!-- </a> -->
         <div class="letter-context"></div>
         <div class="letter-stamp">
@@ -62,6 +62,7 @@
 
 
    <script src="static/animations.js" defer></script>
+   <script src="static/hearts.js" defer></script>
 
 
   </div>
