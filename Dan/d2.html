@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Love Letter</title>
+  <link rel="stylesheet" href="static/styles/2ndpage.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Script&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/perandory');
+    </style>
+</head>
+<body>
+
+  <div> 
+    <div class="block-Swipe2" id="blockSwipe2"></div>
+    <div id="falling-hearts"></div>
+
+    <div>
+  <div class="letter-container">
+    <div class="envelope" id="letter1">  
+      <!-- <img src="static/images/single_heart.png" alt="heart" id="singleheart">
+      <img src="static/images/single_heart1.png" alt="heart" id="singleheart1">
+      <img src="static/images/single_heart2.png" alt="heart" id="singleheart2"> -->
+      
+      <div id="thank">  To:  </div>
+      <div id="dash">---------------------------------------------------------------------</div>
+      <div id="to"> Dan </div>
+      <div id="you">  Date: </div>
+      <div id="dash1">---------------------------------------------------------------------</div>
+
+      <div id="date">  02.14.2025   </div>
+      <!-- <img src="static/images/pinkgradient.png" alt="heart" id="gradient"> -->
+      <!-- <div id="greeting"> My Dearest, Essence </div> -->
+      <!-- <div id="note">  Dum haec verba scribere incipio, calore repleor qui sola tua praesentia in vita mea affertur. Omni momento transeunte, amor meus erga te profundior fit, altior et omnino sine conditionibus. Tecum, amorem inveni qui ordinem transcendit, nexum qui rationem superat. Tu mihi consiliaria et maxima laetitiae fons es. In amplexu tuo domum repperi, et in amore tuo propositum vitae meae inveni. In perpetuum et semper, tuus sum. </div> -->
+      
+      <div id="typewrite"></div>
+      <div id="signature"></div>
+
+      <img id="singleheart" src="static/styles/redheart.svg" alt="imgh">
+      <div id="suitor"></div>
+      <!-- <img src="static/images/letter.png" alt="heart" id="pics"> -->
+
+  </div>
+
+  </div>
+</div>
+
+<script>
+  window.addEventListener('load', () => {
+    const blockSwipe2 = document.getElementById('blockSwipe2');
+    if (blockSwipe2) {
+      setTimeout(() => {
+        blockSwipe2.style.transform = 'translateX(-100%)'; // Slide out to the left
+      }, 100); // Optional slight delay to ensure initial page load
+    }
+  });
+</script>
+
+<script>
+  const text1 = "I hope you are having a great day!! I am happy that you are happy and doing well. I hope you can stay this way and don't let stupid poopy headaches get to you. You are a great friend, and I appreciate everything you have done for me and Ray. ";
+  const text2 = "Sincerely,";
+  const text3 = "Natalie"
+
+
+let i = 0, j = 0, k=0; 
+const speed = 20;
+
+function typeWriter1() {
+  if (i < text1.length) {
+    document.getElementById("typewrite").textContent += text1.charAt(i);
+    i++;
+    setTimeout(typeWriter1, speed);
+  } else {
+    setTimeout(typeWriter2, 1000); // Delay before typing the second text
+  }
+}
+
+function typeWriter2() {
+  if (j < text2.length) {
+    document.getElementById("signature").textContent += text2.charAt(j);
+    j++;
+    setTimeout(typeWriter2, speed);
+  } else {
+    setTimeout(typeWriter3, 1000); // Delay before typing the third text
+  }
+}
+
+function typeWriter3() {
+  if (k < text3.length) {
+    document.getElementById("suitor").textContent += text3.charAt(k);
+    k++;
+    setTimeout(typeWriter3, speed);
+  }
+}
+
+window.onload = typeWriter1;
+</script>
+
+
+<script src="static/animations.js" defer></script>
+<script src="static/hearts.js" defer></script>
+<!-- <script src="static/type.js" defer></script> -->
+
+</div>
+</body>
+</html>
+
