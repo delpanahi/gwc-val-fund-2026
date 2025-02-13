@@ -390,3 +390,10 @@ body {
   z-index: 0;
   opacity: 0.4;
 }
+
+#letteropen2 {
+  background-color: rgb(245, 143, 160);
+  font-family: 'Playfair Display', cursive;
+  position: relative;
+  left: 40%; 
+}
