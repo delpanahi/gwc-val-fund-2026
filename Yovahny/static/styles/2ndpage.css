@@ -397,3 +397,24 @@ body {
   position: relative;
   left: 40%; 
 }
+
+
+.photo-stack {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-60%);
+  display: flex;
+  gap: 14px;
+  z-index: 1;
+}
+
+.memory {
+  width: 90px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0;
+  transform: scale(0.95);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}

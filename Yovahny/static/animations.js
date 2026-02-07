@@ -36,6 +36,7 @@ openButton.addEventListener('click', function() {
     setTimeout(() => {
       blockSwipe2.classList.add('fade-out'); // Add the fade-out and slide-out effect
     }, 100); // Optional slight delay to ensure initial page load
+    
   });
 
 });
