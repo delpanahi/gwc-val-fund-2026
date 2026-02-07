@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Love Letter</title>
+  <link rel="stylesheet" href="static/styles/1stpage.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/lazy-dog" rel="stylesheet">
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/lazy-dog');
+  </style>
+
+  <style>
+  @import url('https://fonts.cdnfonts.com/css/perandory');
+  </style>
+</head>
+
+<body>
+  <div id="falling-hearts"></div>
+  <div>
+  <div class="text-container"> 
+  <svg width="800" height="200">
+    <defs>
+      <path id="curve" d="M50,150 A300,300 0 0,1 750,150" />
+    </defs>
+    <text width="800">
+      <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" fill="#FF6F77" font-size="100px">
+        Happy Valentine's Day
+      </textPath>
+    </text>
+  </svg>
+</div> 
+
+
+  <div id="letter-image" class="letter-image">
+    <div class="animated-mail">
+      <div class="back-fold"></div>
+      <div class="letter"> 
+        <div class="letter-border"></div>
+        <div class="letter-title">Lillian, you have recieved a special letter..</div>
+        <!-- <a href="lovenote"> -->
+        <button id="letter-open" class="letter-open" onclick="location.href='d2.html'">open it</button>
+        <!-- </a> -->
+        <div class="letter-context"></div>
+        <div class="letter-stamp">
+          <div class="letter-stamp-inner"></div>
+        </div>
+      </div>
+      <div class="top-fold"></div>
+      <div class="body"></div>
+      <div class="left-fold"></div>
+    </div>
+    <div class="shadow"></div>
+  </div>
+     <!-- Block swipe effect -->
+   <div class="block-swipe" id="blockSwipe"></div>
+
+
+   <script src="static/animations.js" defer></script>
+   <script src="static/hearts.js" defer></script>
+
+
+  </div>
+</body>
+</html>
