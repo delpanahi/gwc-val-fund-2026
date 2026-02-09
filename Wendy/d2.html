@@ -23,7 +23,9 @@
 
     <div>
   <div class="letter-container">
-    <div class="envelope" id="letter1">  
+    <div class="envelope" id="letter1"> 
+
+        <img src="static/images/wendytimpic.JPG" class="memory-photo"> 
       <!-- <img src="static/images/single_heart.png" alt="heart" id="singleheart">
       <img src="static/images/single_heart1.png" alt="heart" id="singleheart1">
       <img src="static/images/single_heart2.png" alt="heart" id="singleheart2"> -->
@@ -47,6 +49,8 @@
       <!-- <img src="static/images/letter.png" alt="heart" id="pics"> -->
 
   </div>
+
+
 
   </div>
   <button id="letteropen2" onclick="location.href='index.html'">Return To Previous Page</button>
@@ -112,3 +116,15 @@ window.onload = typeWriter1;
 </body>
 </html>
 
+<script>
+  window.addEventListener("load", () => {
+    gsap.from(".memory-photo", {
+      opacity: 0,
+      scale: 0.9,
+      duration: 0.8,
+      stagger: 0.4,
+      ease: "power2.out",
+      delay: 2
+    });
+  });
+</script>
